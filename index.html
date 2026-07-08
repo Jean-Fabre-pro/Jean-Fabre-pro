@@ -3,488 +3,451 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jean Fabre — Projets & Timeline</title>
+<title>Jean Fabre — Chargé de projet</title>
 <style>
 :root {
-  --brown-dark: #3b2a1a;
-  --brown-mid: #6b4c2a;
-  --brown-warm: #9c6b3c;
-  --brown-light: #c49a6c;
-  --brown-pale: #e8d5b7;
-  --cream: #f5ede0;
-  --cream-dark: #ede0cc;
-  --text: #2c1f0e;
-  --text-sec: #6b5540;
-  --white: #fdf8f2;
-  --border: #d4b896;
-  --radius: 8px;
-
-  --c1: #7b4f2e; /* HRS4R */
-  --c2: #5c7a3e; /* Indicateurs */
-  --c3: #3e5c7a; /* VSS */
-  --c4: #7a3e5c; /* HCERES */
-  --c5: #7a6b3e; /* CPJ */
-  --c6: #3e7a6b; /* DGS */
-  --c7: #5c3e7a; /* Infocom/RIPEC */
+  --bd: #3b2a1a; --bm: #6b4c2a; --bw: #9c6b3c; --bl: #c49a6c; --bp: #e8d5b7;
+  --cr: #f5ede0; --cd: #ede0cc; --tx: #2c1f0e; --ts: #6b5540;
+  --wh: #fdf8f2; --bo: #d4b896; --rr: 10px;
 }
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--cream); color: var(--text); }
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--cr);color:var(--tx);}
 
-nav { background: var(--brown-dark); display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; }
-.nav-logo { color: var(--brown-pale); font-size: 13px; font-weight: 500; letter-spacing: 1.5px; padding: 12px 0; }
-.nav-links { display: flex; }
-.nav-links a { color: rgba(232,213,183,0.6); font-size: 12px; padding: 12px 14px; text-decoration: none; border-bottom: 2px solid transparent; transition: all 0.2s; display: block; }
-.nav-links a:hover, .nav-links a.active { color: var(--brown-pale); border-bottom-color: var(--brown-light); }
+/* NAV */
+nav{background:var(--bd);position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;}
+.nl{color:var(--bp);font-size:14px;font-weight:500;letter-spacing:1.5px;padding:14px 0;}
+nav button{color:rgba(232,213,183,.6);font-size:13px;padding:14px 16px;border:none;border-bottom:2px solid transparent;background:none;cursor:pointer;transition:all .2s;}
+nav button:hover,nav button.active{color:var(--bp);border-bottom-color:var(--bl);}
 
-.page-hero { background: var(--brown-dark); padding: 2rem 2rem 1.5rem; text-align: center; }
-.page-hero h1 { font-size: 1.5rem; font-weight: 400; color: var(--cream); margin-bottom: 6px; }
-.page-hero p { font-size: 13px; color: var(--brown-light); }
+/* HERO */
+.hero{background:linear-gradient(135deg,#2c1f0e 0%,#4a3520 60%,#6b4c2a 100%);padding:3.5rem 2rem 2.5rem;text-align:center;}
+.av{width:90px;height:90px;border-radius:50%;background:var(--bm);border:3px solid var(--bw);display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:500;color:var(--bp);margin:0 auto 1.5rem;}
+.hero h1{font-size:2.2rem;font-weight:400;color:var(--cr);margin-bottom:8px;letter-spacing:1px;}
+.hero p.sub{font-size:15px;color:var(--bl);margin-bottom:1.5rem;}
+.htags{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:1.5rem;}
+.htag{font-size:12px;padding:5px 14px;border-radius:20px;background:var(--bm);color:var(--bp);}
+.hcon{display:flex;gap:20px;flex-wrap:wrap;justify-content:center;}
+.hcon a{font-size:13px;color:var(--bl);text-decoration:none;}
+.hcon a:hover{color:var(--cr);}
 
-main { max-width: 1100px; margin: 0 auto; padding: 1.5rem; }
+/* MAIN */
+main{max-width:900px;margin:0 auto;padding:2rem 1.5rem 4rem;}
+.sec{display:none;}.sec.active{display:block;}
+.stitle{font-size:1.1rem;font-weight:600;color:var(--bd);margin-bottom:1.5rem;padding-bottom:10px;border-bottom:2px solid var(--bp);}
+.card{background:var(--wh);border:1px solid var(--bo);border-radius:var(--rr);padding:1.25rem 1.5rem;margin-bottom:1rem;transition:border-color .2s;}
+.card:hover{border-color:var(--bw);}
+.ch{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:10px;}
+.ct{font-size:15px;font-weight:700;color:var(--tx);}
+.co{font-size:13px;color:var(--bw);margin-top:3px;}
+.cd{font-size:11px;color:var(--ts);background:var(--cr);border:1px solid var(--bo);padding:3px 10px;border-radius:20px;white-space:nowrap;flex-shrink:0;}
+.cp{list-style:none;}
+.cp li{font-size:13px;color:var(--ts);padding:3px 0 3px 14px;position:relative;line-height:1.5;}
+.cp li::before{content:"·";position:absolute;left:3px;color:var(--bw);font-size:18px;line-height:1;}
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;}
+.sc{background:var(--wh);border:1px solid var(--bo);border-radius:var(--rr);padding:1rem 1.25rem;}
+.sc h3{font-size:11px;font-weight:700;color:var(--bw);text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--bo);}
+.sp{display:flex;flex-wrap:wrap;gap:5px;}
+.spi{font-size:12px;padding:4px 10px;border-radius:20px;background:var(--bp);color:var(--bd);}
+.ag{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.ic{background:var(--wh);border:1px solid var(--bo);border-radius:var(--rr);padding:1rem 1.25rem;}
+.ic h3{font-size:11px;font-weight:700;color:var(--bw);margin-bottom:10px;text-transform:uppercase;letter-spacing:.8px;padding-bottom:6px;border-bottom:1px solid var(--bo);}
+.ii{font-size:13px;color:var(--ts);padding:4px 0;display:flex;align-items:center;gap:8px;}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--bw);flex-shrink:0;}
+.lr{margin-top:8px;}.ll{display:flex;justify-content:space-between;font-size:12px;color:var(--ts);margin-bottom:4px;}
+.lt{background:var(--bo);border-radius:4px;height:6px;}.lf{height:100%;border-radius:4px;background:var(--bw);}
+.ib{background:var(--wh);border:1px solid var(--bo);border-radius:var(--rr);padding:1.25rem 1.5rem;margin-bottom:1rem;font-size:14px;color:var(--ts);line-height:1.8;}
+.cb{background:var(--bp);border-radius:var(--rr);padding:1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-top:1rem;}
+.cb span{font-size:13px;color:var(--bd);}
+.btn{font-size:13px;padding:8px 20px;border-radius:var(--rr);border:none;background:var(--bd);color:var(--cr);cursor:pointer;text-decoration:none;display:inline-block;}
+.btn:hover{background:var(--bm);}
+.fc{background:var(--wh);border:1px solid var(--bo);border-radius:var(--rr);padding:1.25rem 1.5rem;margin-bottom:1rem;}
+.fd{display:inline-block;font-size:11px;color:var(--ts);background:var(--cr);border:1px solid var(--bo);padding:2px 10px;border-radius:20px;margin-bottom:10px;}
 
-/* TABS */
-.tabs { display: flex; gap: 0; border-bottom: 2px solid var(--border); margin-bottom: 1.5rem; }
-.tab-btn { padding: 10px 20px; font-size: 13px; font-weight: 500; color: var(--text-sec); border: none; background: transparent; cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -2px; transition: all 0.2s; }
-.tab-btn:hover { color: var(--brown-warm); }
-.tab-btn.active { color: var(--brown-dark); border-bottom-color: var(--brown-warm); }
-.tab-pane { display: none; }
-.tab-pane.active { display: block; }
+/* PAGE PROJETS */
+.gpage{display:none;}.gpage.active{display:block;}
+.ghero{background:linear-gradient(135deg,#2c1f0e 0%,#4a3520 60%,#6b4c2a 100%);padding:2.5rem 2.5rem 2rem;}
+.ghero h2{font-size:2rem;font-weight:300;color:var(--cr);letter-spacing:2px;margin-bottom:8px;}
+.ghero h2 span{font-weight:700;color:var(--bl);}
+.ghero p{font-size:14px;color:rgba(232,213,183,.65);margin-bottom:1.5rem;}
+.hst{display:flex;gap:3rem;flex-wrap:wrap;}
+.sn{font-size:2rem;font-weight:700;color:var(--bl);line-height:1;}
+.sl{font-size:11px;color:rgba(232,213,183,.5);margin-top:4px;text-transform:uppercase;letter-spacing:.5px;}
+.gwo{padding:2rem 2.5rem 4rem;}
+.gtbs{display:flex;gap:6px;border-bottom:2px solid var(--bo);margin-bottom:2rem;}
+.gtb{padding:12px 26px;font-size:14px;font-weight:500;color:var(--ts);border:none;background:transparent;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;transition:all .2s;border-radius:6px 6px 0 0;}
+.gtb:hover{color:var(--bw);background:var(--cd);}
+.gtb.active{color:var(--bd);border-bottom-color:var(--bw);background:var(--wh);font-weight:700;}
+.gtp{display:none;}.gtp.active{display:block;}
 
 /* LÉGENDE */
-.legend { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1.5rem; }
-.legend-item { display: flex; align-items: center; gap: 5px; font-size: 11px; color: var(--text-sec); }
-.legend-dot { width: 12px; height: 12px; border-radius: 2px; flex-shrink: 0; }
+.leg{display:flex;flex-wrap:wrap;gap:8px 20px;margin-bottom:2rem;padding:1.25rem 1.75rem;background:var(--wh);border:1px solid var(--bo);border-radius:10px;}
+.legt{font-size:12px;font-weight:700;color:var(--ts);text-transform:uppercase;letter-spacing:1px;width:100%;margin-bottom:4px;}
+.li{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ts);}
+.sw{display:flex;flex-direction:column;gap:2px;}
+.sb{width:24px;height:8px;border-radius:2px;}
+.dmd{width:14px;height:14px;transform:rotate(45deg);border-radius:3px;flex-shrink:0;}
 
 /* GANTT */
-.gantt-wrap { overflow-x: auto; }
-.gantt { min-width: 900px; }
-.gantt-header { display: grid; grid-template-columns: 220px 1fr; border-bottom: 2px solid var(--border); margin-bottom: 4px; }
-.gantt-label-head { font-size: 11px; font-weight: 500; color: var(--text-sec); padding: 4px 8px; }
-.gantt-months { display: grid; position: relative; }
-.gantt-month { font-size: 10px; color: var(--text-sec); text-align: center; padding: 4px 0; border-left: 1px solid var(--brown-pale); }
-.gantt-year-row { display: grid; grid-template-columns: 220px 1fr; margin-bottom: 2px; }
-.gantt-year-label { font-size: 11px; font-weight: 600; color: var(--brown-dark); padding: 2px 8px; }
-.gantt-year-bar { background: var(--brown-pale); height: 3px; margin-top: 8px; border-radius: 2px; }
-.gantt-row { display: grid; grid-template-columns: 220px 1fr; margin-bottom: 3px; align-items: center; min-height: 28px; }
-.gantt-row:hover .gantt-task-label { color: var(--brown-dark); }
-.gantt-task-label { font-size: 11px; color: var(--text-sec); padding: 2px 8px; line-height: 1.3; }
-.gantt-task-label strong { display: block; color: var(--text); font-size: 11px; }
-.gantt-track { position: relative; height: 28px; }
-.gantt-grid-line { position: absolute; top: 0; bottom: 0; width: 1px; background: var(--brown-pale); }
-.gantt-bar { position: absolute; top: 6px; height: 16px; border-radius: 3px; display: flex; align-items: center; padding: 0 5px; font-size: 9px; color: #fff; font-weight: 500; overflow: hidden; white-space: nowrap; cursor: default; transition: opacity 0.2s; }
-.gantt-bar:hover { opacity: 0.85; }
-.gantt-bar.ponctuel { height: 10px; top: 9px; border-radius: 2px; }
-.gantt-section-title { font-size: 11px; font-weight: 600; color: var(--brown-dark); padding: 10px 8px 2px; text-transform: uppercase; letter-spacing: 0.5px; grid-column: 1 / -1; }
-.gantt-group-title { display: grid; grid-template-columns: 220px 1fr; }
-.gantt-group-label { font-size: 10px; font-weight: 600; color: var(--brown-warm); padding: 6px 8px 2px; text-transform: uppercase; letter-spacing: 0.3px; }
+.gout{overflow-x:auto;}
+.gin{min-width:1100px;}
+.gh{display:grid;grid-template-columns:300px 1fr;margin-bottom:10px;padding-bottom:12px;border-bottom:2px solid var(--bo);}
+.ghl{font-size:13px;font-weight:700;color:var(--ts);padding:0 16px;text-transform:uppercase;letter-spacing:1px;display:flex;align-items:flex-end;}
+.ghr{position:relative;height:54px;}
+.gsep{display:grid;grid-template-columns:300px 1fr;margin:24px 0 6px;align-items:center;gap:14px;}
+.gst{font-size:11px;font-weight:700;color:var(--wh);background:var(--bm);padding:7px 16px;border-radius:6px;text-transform:uppercase;letter-spacing:1px;}
+.gsl{height:2px;background:linear-gradient(to right,var(--bl),transparent);}
+.grow{display:grid;grid-template-columns:300px 1fr;align-items:stretch;min-height:130px;border-radius:10px;margin-bottom:6px;transition:background .15s;}
+.grow:hover{background:rgba(196,154,108,.1);}
+.grow.even{background:rgba(196,154,108,.04);}
+.grow.even:hover{background:rgba(196,154,108,.11);}
+.glb{padding:14px 16px;display:flex;flex-direction:column;justify-content:center;border-right:2px solid var(--bo);}
+.glm{font-size:15px;font-weight:700;color:var(--tx);margin-bottom:5px;}
+.gls{font-size:12px;color:var(--ts);line-height:1.4;}
+.gtr{position:relative;min-height:130px;}
+.gl{position:absolute;top:0;bottom:0;pointer-events:none;}
+.gl.yr{width:2px;background:rgba(107,76,42,.28);}
+.gl.qt{width:1px;background:rgba(212,184,150,.32);}
+/* Niveaux barres */
+.bar{position:absolute;border-radius:6px;cursor:pointer;transition:filter .15s,box-shadow .15s;}
+.bar:hover{filter:brightness(1.12);box-shadow:0 3px 14px rgba(0,0,0,.28);}
+.bar.a{height:28px;top:10px;}
+.bar.b{height:22px;top:50px;}
+.bar.c{height:22px;top:90px;}
+/* Étiquettes sous chaque niveau */
+.blbl{position:absolute;font-size:10px;font-weight:700;color:var(--tx);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;pointer-events:none;line-height:1.2;}
+.blbl.a{top:41px;}
+.blbl.b{top:75px;}
+.blbl.c{top:115px;}
+/* Jalons — rouge unique */
+.ms{position:absolute;width:18px;height:18px;transform:rotate(45deg);border-radius:3px;cursor:pointer;transition:transform .2s,box-shadow .15s;z-index:10;}
+.ms:hover{transform:rotate(45deg) scale(1.3);box-shadow:0 4px 14px rgba(0,0,0,.35);}
+.msl{position:absolute;font-size:10px;font-weight:700;color:var(--tx);white-space:nowrap;transform:translateX(-50%);pointer-events:none;line-height:1.2;}
+
+/* TOOLTIP */
+.tt{position:fixed;background:#2c1f0e;color:var(--cr);border-radius:12px;padding:14px 18px;font-size:13px;line-height:1.7;max-width:320px;pointer-events:none;z-index:9999;box-shadow:0 8px 36px rgba(0,0,0,.45);opacity:0;transition:opacity .12s;border:1px solid var(--bm);}
+.tt.on{opacity:1;}
+.tt-t{font-size:15px;font-weight:700;color:var(--bl);margin-bottom:5px;}
+.tt-d{font-size:12px;color:rgba(232,213,183,.55);margin-bottom:8px;font-style:italic;}
+.tt-b{font-size:13px;color:rgba(232,213,183,.88);}
 
 /* FRISE */
-.timeline { position: relative; padding: 1rem 0; }
-.timeline::before { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: var(--border); transform: translateX(-50%); }
-.tl-year { text-align: center; position: relative; margin: 1.5rem 0 0.5rem; }
-.tl-year span { background: var(--brown-dark); color: var(--cream); font-size: 12px; font-weight: 500; padding: 4px 14px; border-radius: 20px; display: inline-block; }
-.tl-item { display: flex; align-items: flex-start; margin-bottom: 1rem; position: relative; }
-.tl-item.left { flex-direction: row-reverse; }
-.tl-item.right { flex-direction: row; }
-.tl-content { width: calc(50% - 30px); background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 10px 14px; }
-.tl-item.left .tl-content { margin-right: 30px; text-align: right; }
-.tl-item.right .tl-content { margin-left: 30px; }
-.tl-dot { width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--white); position: absolute; left: 50%; transform: translateX(-50%); top: 12px; flex-shrink: 0; }
-.tl-date { font-size: 10px; color: var(--text-sec); margin-bottom: 3px; }
-.tl-title { font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 3px; }
-.tl-desc { font-size: 11px; color: var(--text-sec); line-height: 1.5; }
-.tl-tag { display: inline-block; font-size: 10px; padding: 2px 8px; border-radius: 10px; margin-top: 5px; color: #fff; }
+.fw{max-width:900px;margin:0 auto;}
+.fr{position:relative;padding:1rem 0 3rem;}
+.fr::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:4px;background:linear-gradient(to bottom,var(--bl),var(--bo));transform:translateX(-50%);border-radius:4px;}
+.fy{text-align:center;position:relative;margin:2.5rem 0 1.5rem;z-index:2;}
+.fy span{background:var(--bd);color:var(--cr);font-size:15px;font-weight:700;padding:7px 22px;border-radius:22px;display:inline-block;letter-spacing:2px;box-shadow:0 3px 12px rgba(0,0,0,.3);}
+.fi{display:flex;align-items:flex-start;margin-bottom:1.5rem;position:relative;}
+.fi.l{flex-direction:row-reverse;}
+.fic{width:calc(50% - 42px);background:var(--wh);border:1px solid var(--bo);border-radius:10px;padding:16px 20px;box-shadow:0 2px 10px rgba(59,42,26,.07);transition:box-shadow .2s,transform .2s;}
+.fic:hover{box-shadow:0 6px 24px rgba(59,42,26,.13);transform:translateY(-2px);}
+.fi.l .fic{margin-right:42px;}
+.fi.r .fic{margin-left:42px;}
+.fid{width:22px;height:22px;border-radius:50%;border:4px solid var(--wh);position:absolute;left:50%;transform:translateX(-50%);top:16px;z-index:2;box-shadow:0 3px 10px rgba(0,0,0,.25);}
+.fda{font-size:11px;font-weight:700;color:var(--bw);margin-bottom:6px;text-transform:uppercase;letter-spacing:.8px;}
+.fti{font-size:15px;font-weight:700;color:var(--tx);margin-bottom:7px;line-height:1.3;}
+.fde{font-size:13px;color:var(--ts);line-height:1.7;}
+.fts{display:flex;flex-wrap:wrap;gap:5px;margin-top:9px;}
+.fi.l .fts{justify-content:flex-end;}
+.ftg{font-size:11px;font-weight:600;padding:4px 12px;border-radius:12px;color:#fff;}
 
-footer { background: var(--brown-dark); text-align: center; padding: 1.2rem; font-size: 11px; color: rgba(232,213,183,0.4); margin-top: 2rem; }
+footer{background:var(--bd);text-align:center;padding:1.5rem;font-size:12px;color:rgba(232,213,183,.35);}
+@media(max-width:600px){.ag{grid-template-columns:1fr;}.hero h1{font-size:1.6rem;}}
 </style>
 </head>
 <body>
 
 <nav>
-  <span class="nav-logo">JEAN FABRE</span>
-  <div class="nav-links">
-    <a href="index.html">Accueil</a>
-    <a href="index.html">Expériences</a>
-    <a href="#" class="active">Projets & Timeline</a>
-    <a href="index.html">Compétences</a>
-    <a href="index.html">Formation</a>
-    <a href="index.html">À propos</a>
+  <span class="nl">JEAN FABRE</span>
+  <div>
+    <button onclick="showPage('site','accueil',this)" class="active">Accueil</button>
+    <button onclick="showPage('site','exp',this)">Expériences</button>
+    <button onclick="showPage('gpage',null,this)">Projets & Timeline</button>
+    <button onclick="showPage('site','competences',this)">Compétences</button>
+    <button onclick="showPage('site','formation',this)">Formation</button>
+    <button onclick="showPage('site','about',this)">À propos</button>
   </div>
 </nav>
 
-<div class="page-hero">
-  <h1>Projets & Timeline</h1>
-  <p>Université de Franche-Comté · Janvier 2020 – Août 2023</p>
+<!-- SITE PRINCIPAL -->
+<div id="site">
+  <div class="hero">
+    <div class="av">JF</div>
+    <h1>Jean Fabre</h1>
+    <p class="sub">Chargé de projet · Ingénierie de la recherche · Milieu universitaire</p>
+    <div class="htags">
+      <span class="htag">Gestion de projet</span><span class="htag">Recherche universitaire</span>
+      <span class="htag">Pilotage & contrôle de gestion</span><span class="htag">Relations internationales</span>
+    </div>
+    <div class="hcon">
+      <a href="#">📍 Nîmes, 30000</a>
+      <a href="tel:0640110327">📞 06 40 11 03 27</a>
+      <a href="mailto:fabre.jean01@gmail.com">✉️ fabre.jean01@gmail.com</a>
+      <a href="#">🔗 LinkedIn</a>
+    </div>
+  </div>
+  <main>
+    <div id="accueil" class="sec active">
+      <div class="ib">Chargé de projet avec plus de 5 ans d'expérience en milieu universitaire, j'ai évolué au sein d'établissements de recherche publics — Université de Franche-Comté et Université Côte d'Azur — sur des missions transverses : ingénierie de projet, pilotage et contrôle de gestion, valorisation de la recherche. Formé aux relations internationales et aux sciences sociales, j'apporte une approche analytique et rigoureuse à chaque mission.</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.25rem;">
+        <div class="ic">
+          <h3>Parcours professionnel</h3>
+          <div style="margin-bottom:10px"><div style="font-size:13px;font-weight:700;color:var(--tx)">Chargé d'appui à la recherche</div><div style="font-size:12px;color:var(--bw)">Université Côte d'Azur — Labo URMIS, Nice</div><div style="font-size:11px;color:var(--ts)">Juin 2024 – Mai 2025</div></div>
+          <div style="margin-bottom:10px"><div style="font-size:13px;font-weight:700;color:var(--tx)">Chargé de projet</div><div style="font-size:12px;color:var(--bw)">Université de Franche-Comté, Besançon</div><div style="font-size:11px;color:var(--ts)">Janvier 2020 – Août 2023</div></div>
+          <div><div style="font-size:13px;font-weight:700;color:var(--tx)">Chargé de développement de projet</div><div style="font-size:12px;color:var(--bw)">Réseau ANAÏS, Nîmes — Stage M2</div><div style="font-size:11px;color:var(--ts)">Mars – Juin 2017</div></div>
+        </div>
+        <div class="ic">
+          <h3>Formation</h3>
+          <div><div style="font-size:13px;font-weight:700;color:var(--tx)">Master HIRISS</div><div style="font-size:12px;color:var(--bw)">Histoire des Relations Internationales et Sciences Sociales</div><div style="font-size:12px;color:var(--bw)">Université Paul Valéry, Montpellier III</div><div style="font-size:11px;color:var(--ts)">2015 – 2017</div></div>
+        </div>
+      </div>
+      <div class="cb"><span>Disponible pour de nouvelles opportunités en milieu universitaire ou de recherche</span><a href="mailto:fabre.jean01@gmail.com" class="btn">Me contacter</a></div>
+    </div>
+
+    <div id="exp" class="sec">
+      <div class="stitle">Expériences professionnelles</div>
+      <div class="card"><div class="ch"><div><div class="ct">Chargé d'appui à la recherche</div><div class="co">Université Côte d'Azur — Laboratoire URMIS, Nice</div></div><span class="cd">Juin 2024 – Mai 2025</span></div><ul class="cp"><li>Mise en œuvre de projets de communication du laboratoire</li><li>Appui à la gestion de projets et de leurs budgets</li><li>Organisation d'évènements scientifiques et pédagogiques</li><li>Appui à la gestion d'un Master 2 — aspects pédagogiques et suivi de son application</li></ul></div>
+      <div class="card"><div class="ch"><div><div class="ct">Chargé de projet</div><div class="co">Université de Franche-Comté, Besançon</div></div><span class="cd">Janvier 2020 – Août 2023</span></div><ul class="cp"><li><strong>2022–2023</strong> : Direction Générale des Services</li><li><strong>2021–2022</strong> : Pilotage et Contrôle de Gestion</li><li><strong>2020–2021</strong> : Direction de la Recherche et de la Valorisation (DRV)</li><li>Ingénierie de projet : conception, réflexion, animation</li><li>Maîtrise des outils : Excel, QlikView, Word, PowerPoint, Suite Adobe</li><li>Rigueur, organisation, sens des priorités : suivi d'échéances, comptes rendus</li></ul></div>
+      <div class="card" style="opacity:.85"><div class="ch"><div><div class="ct" style="font-size:13px">Autres expériences</div><div class="co">Réseau ANAÏS · Memphis Coffee · Intermarché · Restaurant Clos du Murier</div></div><span class="cd">2012 – 2019</span></div><ul class="cp"><li><strong>Réseau ANAÏS, Nîmes (2017)</strong> — Chargé de développement de projet, stage M2</li><li><strong>Memphis Coffee, Alès (2018–2019)</strong> — Commis de cuisine</li><li><strong>Intermarché, Anduze (2018)</strong> — Agent de mise en rayon</li><li><strong>Restaurant Clos du Murier, Générargues (2012–2017)</strong> — Grillardin, 6 saisons</li></ul></div>
+    </div>
+
+    <div id="competences" class="sec">
+      <div class="stitle">Compétences</div>
+      <div class="sg">
+        <div class="sc"><h3>Outils & logiciels</h3><div class="sp"><span class="spi">QlikView</span><span class="spi">Excel</span><span class="spi">Word</span><span class="spi">PowerPoint</span><span class="spi">Suite Adobe</span></div></div>
+        <div class="sc"><h3>Gestion de projet</h3><div class="sp"><span class="spi">Ingénierie de projet</span><span class="spi">Suivi d'échéances</span><span class="spi">Comptes rendus</span><span class="spi">Pilotage</span><span class="spi">Contrôle de gestion</span></div></div>
+        <div class="sc"><h3>Milieu universitaire</h3><div class="sp"><span class="spi">ESR</span><span class="spi">HCERES</span><span class="spi">Laboratoire de recherche</span><span class="spi">Espace Européen</span><span class="spi">Collegiums</span></div></div>
+        <div class="sc"><h3>Domaines académiques</h3><div class="sp"><span class="spi">Relations internationales</span><span class="spi">Géopolitique</span><span class="spi">Droit international</span><span class="spi">Politique migratoire</span></div></div>
+        <div class="sc"><h3>Savoir-faire transverses</h3><div class="sp"><span class="spi">Rédaction scientifique</span><span class="spi">Analyse de données</span><span class="spi">Réflexion critique</span><span class="spi">Constitution de corpus</span></div></div>
+        <div class="sc"><h3>Soft skills</h3><div class="sp"><span class="spi">Rigueur</span><span class="spi">Organisation</span><span class="spi">Sens des priorités</span><span class="spi">Communication</span><span class="spi">Adaptabilité</span></div></div>
+      </div>
+    </div>
+
+    <div id="formation" class="sec">
+      <div class="stitle">Formation</div>
+      <div class="fc">
+        <div style="font-size:15px;font-weight:700;color:var(--tx)">Master HIRISS — Histoire des Relations Internationales et Sciences Sociales</div>
+        <div style="font-size:13px;color:var(--bw);margin:3px 0 6px">Université Paul Valéry, Montpellier III</div>
+        <span class="fd">2015 – 2017</span>
+        <ul class="cp"><li>Formation pluridisciplinaire : Institution Européenne, Organisations Internationales, Géopolitique, Droit International, Politique Migratoire</li><li>Connaissance du fonctionnement juridique, économique et politique des grandes institutions nationales et internationales</li><li>Capacité d'analyse, d'interprétation et de réflexion critique sur les enjeux internationaux</li><li>Excellente maîtrise de l'écrit (mémoire de recherche scientifique, dossiers d'études) et de l'oral</li><li>Maîtrise des outils de recherche en histoire contemporaine : collecte de données, analyse de sources, constitution de corpus</li></ul>
+      </div>
+    </div>
+
+    <div id="about" class="sec">
+      <div class="stitle">À propos</div>
+      <div class="ag">
+        <div class="ic"><h3>Informations personnelles</h3><div class="ii"><span class="dot"></span>Nîmes, France (30000)</div><div class="ii"><span class="dot"></span>Permis B</div><div class="lr"><div class="ll"><span>Français</span><span>Natif</span></div><div class="lt"><div class="lf" style="width:100%"></div></div></div><div class="lr"><div class="ll"><span>Anglais</span><span>B2</span></div><div class="lt"><div class="lf" style="width:65%"></div></div></div></div>
+        <div class="ic"><h3>Centres d'intérêt</h3><div class="ii"><span class="dot"></span>Football — 6 ans de pratique</div><div class="ii"><span class="dot"></span>Handball — 5 ans de pratique</div><div class="ii"><span class="dot"></span>Tir à l'arc — 5 ans de pratique</div><div class="ii"><span class="dot"></span>Géopolitique & actualités politiques</div><div class="ii"><span class="dot"></span>Histoire</div></div>
+      </div>
+    </div>
+  </main>
 </div>
 
-<main>
-  <div class="tabs">
-    <button class="tab-btn active" onclick="showTab('gantt',this)">Diagramme de Gantt</button>
-    <button class="tab-btn" onclick="showTab('frise',this)">Frise chronologique</button>
-  </div>
-
-  <!-- LÉGENDE -->
-  <div class="legend">
-    <div class="legend-item"><div class="legend-dot" style="background:var(--c1)"></div> Label HRS4R</div>
-    <div class="legend-item"><div class="legend-dot" style="background:var(--c2)"></div> Indicateurs recherche</div>
-    <div class="legend-item"><div class="legend-dot" style="background:var(--c3)"></div> VSS / Égalité</div>
-    <div class="legend-item"><div class="legend-dot" style="background:var(--c4)"></div> HCERES</div>
-    <div class="legend-item"><div class="legend-dot" style="background:var(--c5)"></div> Veille CPJ</div>
-    <div class="legend-item"><div class="legend-dot" style="background:var(--c6)"></div> Soutien DGS</div>
-    <div class="legend-item"><div class="legend-dot" style="background:var(--c7)"></div> Infocom / RIPEC</div>
-  </div>
-
-  <!-- GANTT -->
-  <div id="gantt" class="tab-pane active">
-    <div class="gantt-wrap">
-      <div class="gantt" id="gantt-container"></div>
+<!-- PAGE PROJETS -->
+<div id="gpage" class="gpage">
+  <div class="ghero">
+    <h2>Projets & <span>Timeline</span></h2>
+    <p>Université de Franche-Comté &nbsp;·&nbsp; Janvier 2020 – Août 2023 &nbsp;·&nbsp; Survolez les barres pour le détail</p>
+    <div class="hst">
+      <div><div class="sn">2</div><div class="sl">Projets structurants</div></div>
+      <div><div class="sn">7</div><div class="sl">Missions ponctuelles</div></div>
+      <div><div class="sn">3,5</div><div class="sl">Années</div></div>
+      <div><div class="sn">30+</div><div class="sl">Acteurs coordonnés</div></div>
+      <div><div class="sn">138K€</div><div class="sl">Subvention obtenue</div></div>
     </div>
   </div>
+  <div class="gwo">
+    <div class="gtbs">
+      <button class="gtb active" onclick="showGTab('gg',this)">📊 Diagramme de Gantt</button>
+      <button class="gtb" onclick="showGTab('gf',this)">📅 Frise chronologique</button>
+    </div>
 
-  <!-- FRISE -->
-  <div id="frise" class="tab-pane">
-    <div class="timeline">
+    <div class="leg">
+      <div class="legt">Code couleur — nuances foncé → clair = phases successives d'un même projet · Losange rouge = moment clé</div>
+      <div class="li"><div class="sw"><div class="sb" style="background:#5c3318"></div><div class="sb" style="background:#8b5e38"></div><div class="sb" style="background:#c49a6c"></div></div>Label HRS4R</div>
+      <div class="li"><div class="sw"><div class="sb" style="background:#2e5c20"></div><div class="sb" style="background:#5a8a3a"></div><div class="sb" style="background:#90c06a"></div></div>Indicateurs recherche</div>
+      <div class="li"><div class="sw"><div class="sb" style="background:#1a3d6b"></div><div class="sb" style="background:#3a6ba0"></div></div>VSS / Égalité</div>
+      <div class="li"><div class="sw"><div class="sb" style="background:#5c1f3a"></div><div class="sb" style="background:#8a4060"></div></div>HCERES</div>
+      <div class="li"><div class="sw"><div class="sb" style="background:#3a5c7a"></div><div class="sb" style="background:#6a90b0"></div></div>Veille CPJ</div>
+      <div class="li"><div class="sw"><div class="sb" style="background:#1a5c4a"></div><div class="sb" style="background:#3a8a6a"></div></div>Soutien DGS</div>
+      <div class="li"><div class="sw"><div class="sb" style="background:#3a1f5c"></div></div>Infocom / RIPEC</div>
+      <div class="li"><div class="dmd" style="background:#c0392b"></div>Moment clé (soumission, audit, résultat…)</div>
+    </div>
 
-      <div class="tl-year"><span>2020</span></div>
+    <div id="gg" class="gtp active">
+      <div class="gout"><div class="gin" id="groot"></div></div>
+    </div>
 
-      <div class="tl-item right">
-        <div class="tl-dot" style="background:var(--c1)"></div>
-        <div class="tl-content">
-          <div class="tl-date">Janvier 2020</div>
-          <div class="tl-title">Prise de poste — Chargé de projet</div>
-          <div class="tl-desc">Rattachement à la DRV (Direction de la Recherche et de la Valorisation). Prise en main du projet HRS4R et des indicateurs de la recherche.</div>
-          <span class="tl-tag" style="background:var(--c1)">HRS4R</span>
-          <span class="tl-tag" style="background:var(--c2)">Indicateurs</span>
-        </div>
-      </div>
-
-      <div class="tl-item left">
-        <div class="tl-dot" style="background:var(--c2)"></div>
-        <div class="tl-content">
-          <div class="tl-date">2020</div>
-          <div class="tl-title">Récolte des données de recherche</div>
-          <div class="tl-desc">Collecte des données 2017→2020 auprès des laboratoires, de la COMUE UBFC et des services centraux. Participation aux Collegiums en soutien administratif.</div>
-          <span class="tl-tag" style="background:var(--c2)">Indicateurs recherche</span>
-        </div>
-      </div>
-
-      <div class="tl-item right">
-        <div class="tl-dot" style="background:var(--c1)"></div>
-        <div class="tl-content">
-          <div class="tl-date">2020 → 2022</div>
-          <div class="tl-title">Coordination HRS4R — Plan d'actions</div>
-          <div class="tl-desc">Coordination de dizaines d'acteurs (DRH, DSIN, Dir. Communication, SCD, Hygiène & Sécurité, directions de laboratoires, service formation…) pour la réalisation du plan d'actions en vue du renouvellement du label européen.</div>
-          <span class="tl-tag" style="background:var(--c1)">HRS4R</span>
-        </div>
-      </div>
-
-      <div class="tl-year"><span>2021</span></div>
-
-      <div class="tl-item left">
-        <div class="tl-dot" style="background:var(--c2)"></div>
-        <div class="tl-content">
-          <div class="tl-date">2021</div>
-          <div class="tl-title">Fiches de qualification & QlikView</div>
-          <div class="tl-desc">Conception des fiches de qualification méthodologiques pour chaque indicateur. Pilotage de la transposition sous QlikView en binôme avec la collègue DSIN.</div>
-          <span class="tl-tag" style="background:var(--c2)">Indicateurs</span>
-        </div>
-      </div>
-
-      <div class="tl-item right">
-        <div class="tl-dot" style="background:var(--c1)"></div>
-        <div class="tl-content">
-          <div class="tl-date">Mars 2021 → Février 2022</div>
-          <div class="tl-title">Élaboration du nouveau plan d'actions HRS4R</div>
-          <div class="tl-desc">En parallèle de la finalisation du plan existant, élaboration du nouveau plan d'actions pour la période suivante, intégrant les nouvelles priorités de la CE : science ouverte et conditions des jeunes chercheurs.</div>
-          <span class="tl-tag" style="background:var(--c1)">HRS4R</span>
-        </div>
-      </div>
-
-      <div class="tl-year"><span>2022</span></div>
-
-      <div class="tl-item left">
-        <div class="tl-dot" style="background:var(--c1)"></div>
-        <div class="tl-content">
-          <div class="tl-date">Février 2022</div>
-          <div class="tl-title">Soumission du dossier de renouvellement HRS4R</div>
-          <div class="tl-desc">Dépôt du dossier complet sur la plateforme en ligne de la Commission Européenne dans les délais impartis.</div>
-          <span class="tl-tag" style="background:var(--c1)">HRS4R</span>
-        </div>
-      </div>
-
-      <div class="tl-item right">
-        <div class="tl-dot" style="background:var(--c2)"></div>
-        <div class="tl-content">
-          <div class="tl-date">Mars 2022</div>
-          <div class="tl-title">Diffusion des fiches indicateurs par Collegium</div>
-          <div class="tl-desc">Diffusion dans les 5 Collegiums des fiches de synthèse par discipline (données 2017→2020), produites par la cheffe de service à partir des données collectées.</div>
-          <span class="tl-tag" style="background:var(--c2)">Indicateurs</span>
-        </div>
-      </div>
-
-      <div class="tl-item left">
-        <div class="tl-dot" style="background:var(--c1)"></div>
-        <div class="tl-content">
-          <div class="tl-date">Avril 2022</div>
-          <div class="tl-title">Audit sur site — Experts Commission Européenne</div>
-          <div class="tl-desc">Organisation et coordination de la venue des experts de la CE pour l'audit HRS4R. Renouvellement du label obtenu.</div>
-          <span class="tl-tag" style="background:var(--c1)">HRS4R</span>
-        </div>
-      </div>
-
-      <div class="tl-item right">
-        <div class="tl-dot" style="background:var(--c5)"></div>
-        <div class="tl-content">
-          <div class="tl-date">2022</div>
-          <div class="tl-title">Étude prospective CPJ</div>
-          <div class="tl-desc">Veille et analyse sur les Chaires de Professeur Junior : disciplines, sujets, interdisciplinarité, attentes du ministère.</div>
-          <span class="tl-tag" style="background:var(--c5)">Veille CPJ</span>
-        </div>
-      </div>
-
-      <div class="tl-item left">
-        <div class="tl-dot" style="background:var(--c4)"></div>
-        <div class="tl-content">
-          <div class="tl-date">2022</div>
-          <div class="tl-title">HCERES — Établissement & Formations</div>
-          <div class="tl-desc">Soutien administratif sur le référentiel d'évaluation établissement. Organisation de la venue du comité d'experts HCERES. Soutien à la programmation des auditions formations avec la VP Formation.</div>
-          <span class="tl-tag" style="background:var(--c4)">HCERES</span>
-        </div>
-      </div>
-
-      <div class="tl-item right">
-        <div class="tl-dot" style="background:var(--c3)"></div>
-        <div class="tl-content">
-          <div class="tl-date">2022</div>
-          <div class="tl-title">AAP MESRI — Violences Sexistes et Sexuelles</div>
-          <div class="tl-desc">Conception des tableaux de bord et soutien au montage du dossier de demande de subvention VSS (AAP MESRI). Subvention obtenue au montant maximum alloué : 138 110 €.</div>
-          <span class="tl-tag" style="background:var(--c3)">VSS / Égalité</span>
-        </div>
-      </div>
-
-      <div class="tl-item left">
-        <div class="tl-dot" style="background:var(--c6)"></div>
-        <div class="tl-content">
-          <div class="tl-date">2022</div>
-          <div class="tl-title">Soutien DGS — Dialogues de gestion & Revues de services</div>
-          <div class="tl-desc">Soutien administratif au DGS pour les dialogues de gestion et les revues de services (prise de notes, documents de suivi) sur 4 thèmes : Appui recherche, Vie étudiante, Formation, Modernisation administrative.</div>
-          <span class="tl-tag" style="background:var(--c6)">Soutien DGS</span>
-        </div>
-      </div>
-
-      <div class="tl-year"><span>2023</span></div>
-
-      <div class="tl-item right">
-        <div class="tl-dot" style="background:var(--c2)"></div>
-        <div class="tl-content">
-          <div class="tl-date">2023</div>
-          <div class="tl-title">Suivi annuel des indicateurs recherche</div>
-          <div class="tl-desc">Mise à jour et suivi des indicateurs QlikView pour l'année 2022-2023.</div>
-          <span class="tl-tag" style="background:var(--c2)">Indicateurs</span>
-        </div>
-      </div>
-
-      <div class="tl-item left">
-        <div class="tl-dot" style="background:var(--c3)"></div>
-        <div class="tl-content">
-          <div class="tl-date">2023</div>
-          <div class="tl-title">AAP VSS 2023 & RIPEC</div>
-          <div class="tl-desc">Renouvellement du dossier VSS avec mise à jour des tableaux de bord. Soutien administratif sur les documents RIPEC (régime indemnitaire des enseignants-chercheurs).</div>
-          <span class="tl-tag" style="background:var(--c3)">VSS</span>
-          <span class="tl-tag" style="background:var(--c7)">RIPEC</span>
-        </div>
-      </div>
-
-      <div class="tl-item right">
-        <div class="tl-dot" style="background:var(--c7)"></div>
-        <div class="tl-content">
-          <div class="tl-date">2023</div>
-          <div class="tl-title">Groupe de travail Infocom</div>
-          <div class="tl-desc">Soutien administratif au groupe de travail sur le pilotage stratégique recherche et formation, avec les VP Collegium et CFVU.</div>
-          <span class="tl-tag" style="background:var(--c7)">Infocom</span>
-        </div>
-      </div>
-
-      <div class="tl-item left">
-        <div class="tl-dot" style="background:var(--c5)"></div>
-        <div class="tl-content">
-          <div class="tl-date">2023</div>
-          <div class="tl-title">Veille CPJ & Soutien DGS</div>
-          <div class="tl-desc">Reconduction de la veille sur les Chaires de Professeur Junior. Soutien au DGS pour les dialogues de gestion et revues de services.</div>
-          <span class="tl-tag" style="background:var(--c5)">CPJ</span>
-          <span class="tl-tag" style="background:var(--c6)">DGS</span>
-        </div>
-      </div>
-
-      <div class="tl-item right">
-        <div class="tl-dot" style="background:var(--c1)"></div>
-        <div class="tl-content">
-          <div class="tl-date">Août 2023</div>
-          <div class="tl-title">Fin de poste — UFC Besançon</div>
-          <div class="tl-desc">Départ de l'Université de Franche-Comté après 3 ans et demi de missions transverses sur les projets stratégiques de l'établissement.</div>
-          <span class="tl-tag" style="background:var(--brown-mid)">Départ UFC</span>
-        </div>
-      </div>
-
+    <div id="gf" class="gtp">
+      <div class="fw"><div class="fr">
+        <div class="fy"><span>2020</span></div>
+        <div class="fi r"><div class="fid" style="background:#5c3318"></div><div class="fic"><div class="fda">Janvier 2020</div><div class="fti">Prise de poste — Chargé de projet, DRV</div><div class="fde">Rattachement à la Direction de la Recherche et de la Valorisation. Prise en main du projet HRS4R et début de la récolte des données de recherche.</div><div class="fts"><span class="ftg" style="background:#5c3318">HRS4R</span><span class="ftg" style="background:#2e5c20">Indicateurs</span></div></div></div>
+        <div class="fi l"><div class="fid" style="background:#2e5c20"></div><div class="fic"><div class="fda">2020</div><div class="fti">Récolte des données de recherche 2017–2020</div><div class="fde">Collecte auprès des laboratoires, de la COMUE UBFC et des services centraux. Participation aux réunions des 5 Collegiums disciplinaires en soutien administratif.</div><div class="fts"><span class="ftg" style="background:#2e5c20">Indicateurs recherche</span></div></div></div>
+        <div class="fi r"><div class="fid" style="background:#5c3318"></div><div class="fic"><div class="fda">2020 → 2022</div><div class="fti">Coordination HRS4R — Réalisation du plan d'actions</div><div class="fde">Coordination de plus de 30 acteurs simultanément : DRH, DSIN, Direction Communication, SCD, Hygiène & Sécurité, directions de laboratoires, service formation… Suivi des échéances, comptes rendus, reporting VP RH.</div><div class="fts"><span class="ftg" style="background:#5c3318">HRS4R</span></div></div></div>
+        <div class="fy"><span>2021</span></div>
+        <div class="fi l"><div class="fid" style="background:#2e5c20"></div><div class="fic"><div class="fda">2021 — Transfert au Service Pilotage & Contrôle de Gestion</div><div class="fti">Fiches de qualification & transposition QlikView</div><div class="fde">Conception des fiches de qualification méthodologiques. Pilotage de la transposition sous QlikView en binôme avec la collègue DSIN.</div><div class="fts"><span class="ftg" style="background:#2e5c20">Indicateurs</span></div></div></div>
+        <div class="fi r"><div class="fid" style="background:#5c3318"></div><div class="fic"><div class="fda">Mars 2021 → Février 2022</div><div class="fti">Élaboration du nouveau plan d'actions HRS4R</div><div class="fde">En parallèle : rédaction du nouveau plan intégrant les priorités CE — science ouverte et conditions des jeunes chercheurs.</div><div class="fts"><span class="ftg" style="background:#5c3318">HRS4R</span></div></div></div>
+        <div class="fy"><span>2022</span></div>
+        <div class="fi l"><div class="fid" style="background:#c0392b"></div><div class="fic"><div class="fda">Février 2022 — ⬥ Moment clé</div><div class="fti">Soumission du dossier de renouvellement HRS4R</div><div class="fde">Dépôt du dossier complet sur la plateforme CE : bilan du plan réalisé + nouveau plan d'actions.</div><div class="fts"><span class="ftg" style="background:#5c3318">HRS4R</span><span class="ftg" style="background:#c0392b">Soumission CE</span></div></div></div>
+        <div class="fi r"><div class="fid" style="background:#c0392b"></div><div class="fic"><div class="fda">Mars 2022 — ⬥ Moment clé</div><div class="fti">Diffusion des fiches indicateurs par Collegium</div><div class="fde">Diffusion dans les 5 Collegiums des fiches de synthèse par discipline (données 2017→2020). Restitution à la gouvernance.</div><div class="fts"><span class="ftg" style="background:#2e5c20">Indicateurs</span></div></div></div>
+        <div class="fi l"><div class="fid" style="background:#c0392b"></div><div class="fic"><div class="fda">Avril 2022 — ⬥ Moment clé</div><div class="fti">Audit sur site — Experts Commission Européenne</div><div class="fde">Organisation et coordination logistique de la venue des experts CE. Label HRS4R renouvelé avec succès.</div><div class="fts"><span class="ftg" style="background:#5c3318">HRS4R</span><span class="ftg" style="background:#c0392b">Label renouvelé ✓</span></div></div></div>
+        <div class="fi r"><div class="fid" style="background:#5c1f3a"></div><div class="fic"><div class="fda">2022</div><div class="fti">HCERES — Établissement & Formations</div><div class="fde">Soutien administratif sur le référentiel d'évaluation. Organisation de la venue du comité d'experts HCERES. Programmation des auditions formations avec la VP Formation (20 octobre 2022).</div><div class="fts"><span class="ftg" style="background:#5c1f3a">HCERES</span></div></div></div>
+        <div class="fi l"><div class="fid" style="background:#1a3d6b"></div><div class="fic"><div class="fda">2022 — ⬥ Moment clé</div><div class="fti">AAP MESRI — VSS & Égalité professionnelle</div><div class="fde">Conception des tableaux de bord et soutien au montage du dossier MESRI/DGESIP-DGRI. Subvention obtenue au montant maximum : 138 110 €.</div><div class="fts"><span class="ftg" style="background:#1a3d6b">VSS / Égalité</span><span class="ftg" style="background:#c0392b">138 110 € ✓</span></div></div></div>
+        <div class="fi r"><div class="fid" style="background:#3a5c7a"></div><div class="fic"><div class="fda">2022</div><div class="fti">Étude prospective CPJ & Soutien DGS</div><div class="fde">Veille sur les Chaires de Professeur Junior. Soutien administratif au DGS pour les dialogues de gestion et revues de services sur 4 thèmes stratégiques.</div><div class="fts"><span class="ftg" style="background:#3a5c7a">CPJ</span><span class="ftg" style="background:#1a5c4a">Soutien DGS</span></div></div></div>
+        <div class="fy"><span>2023</span></div>
+        <div class="fi l"><div class="fid" style="background:#1a3d6b"></div><div class="fic"><div class="fda">2023</div><div class="fti">Renouvellement AAP VSS, RIPEC & Infocom</div><div class="fde">Mise à jour des tableaux de bord VSS. Soutien RIPEC. Soutien au groupe de travail Infocom (pilotage stratégique recherche-formation, VP Collegium et CFVU).</div><div class="fts"><span class="ftg" style="background:#1a3d6b">VSS</span><span class="ftg" style="background:#3a1f5c">RIPEC</span><span class="ftg" style="background:#3a1f5c">Infocom</span></div></div></div>
+        <div class="fi r"><div class="fid" style="background:var(--bm)"></div><div class="fic"><div class="fda">Août 2023</div><div class="fti">Fin de poste — UFC Besançon</div><div class="fde">Départ après 3 ans et demi de missions transverses stratégiques. Prise de poste au Laboratoire URMIS, Université Côte d'Azur, en juin 2024.</div><div class="fts"><span class="ftg" style="background:var(--bm)">UFC → UCA</span></div></div></div>
+      </div></div>
     </div>
   </div>
-</main>
+</div>
 
-<footer>Jean Fabre — fabre.jean01@gmail.com — Nîmes, 2026</footer>
+<div class="tt" id="tt"><div class="tt-t" id="ttt"></div><div class="tt-d" id="ttd"></div><div class="tt-b" id="ttb"></div></div>
+<footer>Jean Fabre &nbsp;·&nbsp; fabre.jean01@gmail.com &nbsp;·&nbsp; Nîmes, 2026</footer>
 
 <script>
-// GANTT ENGINE
-const START = new Date(2020, 0, 1);
-const END = new Date(2023, 7, 31);
-const TOTAL_DAYS = (END - START) / 86400000;
-
-function pct(date) {
-  const d = new Date(date);
-  return Math.max(0, Math.min(100, (d - START) / (END - START) * 100));
+function showPage(pid,sid,btn){
+  document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  const site=document.getElementById('site'), gp=document.getElementById('gpage');
+  if(pid==='site'){
+    site.style.display='block'; gp.classList.remove('active');
+    document.querySelectorAll('.sec').forEach(s=>s.classList.remove('active'));
+    document.getElementById(sid).classList.add('active');
+  } else { site.style.display='none'; gp.classList.add('active'); }
+  window.scrollTo({top:0,behavior:'smooth'});
 }
-function width(s, e) {
-  return Math.max(0.5, pct(e) - pct(s));
+function showGTab(id,btn){
+  document.querySelectorAll('.gtp').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.gtb').forEach(b=>b.classList.remove('active'));
+  document.getElementById(id).classList.add('active'); btn.classList.add('active');
 }
 
-const PROJECTS = [
-  {
-    group: "PROJETS STRUCTURANTS",
-    rows: [
-      {
-        label: "Label HRS4R", sublabel: "Coordination plan d'actions",
-        bars: [
-          { s:'2020-01-01', e:'2022-02-28', color:'var(--c1)', label:'Coordination & réalisation plan d\'actions' },
-          { s:'2021-03-01', e:'2022-02-28', color:'var(--c1)', label:'Élaboration nouveau plan', opacity:0.6, offset:18 },
-          { s:'2022-02-01', e:'2022-02-28', color:'#e74c3c', label:'Soumission CE', ponctuel:true, offset:0 },
-          { s:'2022-04-01', e:'2022-04-30', color:'#e74c3c', label:'Audit sur site', ponctuel:true, offset:0 },
-          { s:'2022-05-01', e:'2023-08-31', color:'var(--c1)', label:'Mise en oeuvre nouveau plan', opacity:0.5 },
-        ]
-      },
-      {
-        label: "Indicateurs recherche", sublabel: "Pilotage & QlikView",
-        bars: [
-          { s:'2020-01-01', e:'2021-12-31', color:'var(--c2)', label:'Récolte données 2017-2020' },
-          { s:'2021-01-01', e:'2021-12-31', color:'var(--c2)', label:'Fiches qualif. + QlikView', opacity:0.65, offset:18 },
-          { s:'2022-01-01', e:'2023-08-31', color:'var(--c2)', label:'Suivi annuel indicateurs', opacity:0.5 },
-        ]
-      },
-    ]
-  },
-  {
-    group: "PROJETS PONCTUELS 2022",
-    rows: [
-      {
-        label: "HCERES établissement", sublabel: "Référentiel & visite experts",
-        bars: [
-          { s:'2022-01-01', e:'2022-06-30', color:'var(--c4)', label:'Soutien référentiel + org. venue HCERES', ponctuel:true },
-        ]
-      },
-      {
-        label: "HCERES formations", sublabel: "Auditions oct. 2022",
-        bars: [
-          { s:'2022-06-01', e:'2022-10-31', color:'var(--c4)', label:'Programmation auditions formations', ponctuel:true, opacity:0.7 },
-        ]
-      },
-      {
-        label: "AAP VSS / Égalité", sublabel: "TdB + montage MESRI",
-        bars: [
-          { s:'2022-01-01', e:'2022-06-30', color:'var(--c3)', label:'TdB + dossier MESRI → 138 110€', ponctuel:true },
-          { s:'2023-01-01', e:'2023-06-30', color:'var(--c3)', label:'Renouvellement AAP VSS 2023', ponctuel:true },
-        ]
-      },
-      {
-        label: "Veille CPJ", sublabel: "Étude prospective",
-        bars: [
-          { s:'2022-01-01', e:'2022-12-31', color:'var(--c5)', label:'Veille CPJ 2022', ponctuel:true },
-          { s:'2023-01-01', e:'2023-08-31', color:'var(--c5)', label:'Veille CPJ 2023', ponctuel:true },
-        ]
-      },
-    ]
-  },
-  {
-    group: "SOUTIEN TRANSVERSAL",
-    rows: [
-      {
-        label: "Soutien DGS", sublabel: "Dialogues de gestion & revues services",
-        bars: [
-          { s:'2022-01-01', e:'2022-12-31', color:'var(--c6)', label:'Dialogues gestion + revues services 2022', ponctuel:true },
-          { s:'2023-01-01', e:'2023-08-31', color:'var(--c6)', label:'Dialogues gestion + revues services 2023', ponctuel:true },
-        ]
-      },
-      {
-        label: "Infocom / RIPEC", sublabel: "GT pilotage stratégique",
-        bars: [
-          { s:'2023-01-01', e:'2023-08-31', color:'var(--c7)', label:'GT Infocom + RIPEC', ponctuel:true },
-        ]
-      },
-    ]
-  }
+const tt=document.getElementById('tt'),ttt=document.getElementById('ttt'),ttd=document.getElementById('ttd'),ttb=document.getElementById('ttb');
+function showTT(e,t,d,b){ttt.textContent=t;ttd.textContent=d;ttb.textContent=b;tt.classList.add('on');moveTT(e);}
+function moveTT(e){let x=e.clientX+20,y=e.clientY-14;if(x+330>window.innerWidth)x=e.clientX-345;if(y+160>window.innerHeight)y=e.clientY-160;tt.style.left=x+'px';tt.style.top=y+'px';}
+function hideTT(){tt.classList.remove('on');}
+document.addEventListener('mousemove',moveTT);
+
+const S=new Date(2020,0,1),E=new Date(2023,7,31),SPAN=E-S;
+function p(ds){return Math.max(0,Math.min(100,(new Date(ds)-S)/SPAN*100));}
+function bw(s,e){return Math.max(0.5,p(e)-p(s));}
+
+const QS=[
+  {y:2020,q:1,d:'2020-01-01'},{y:2020,q:2,d:'2020-04-01'},{y:2020,q:3,d:'2020-07-01'},{y:2020,q:4,d:'2020-10-01'},
+  {y:2021,q:1,d:'2021-01-01'},{y:2021,q:2,d:'2021-04-01'},{y:2021,q:3,d:'2021-07-01'},{y:2021,q:4,d:'2021-10-01'},
+  {y:2022,q:1,d:'2022-01-01'},{y:2022,q:2,d:'2022-04-01'},{y:2022,q:3,d:'2022-07-01'},{y:2022,q:4,d:'2022-10-01'},
+  {y:2023,q:1,d:'2023-01-01'},{y:2023,q:2,d:'2023-04-01'},{y:2023,q:3,d:'2023-07-01'},
 ];
 
-// Build months
-const months = [];
-let d = new Date(START);
-while (d <= END) {
-  months.push(new Date(d));
-  d.setMonth(d.getMonth() + 1);
-}
+const RED='#c0392b';
 
-function buildGantt() {
-  const container = document.getElementById('gantt-container');
-  let html = '';
+const DATA=[
+  {group:'Projets structurants (long terme)',rows:[
+    {main:'Label HRS4R',sub:'Excellence in Research — Commission Européenne',
+     bars:[
+      {s:'2020-01-01',e:'2022-02-28',c:'#5c3318',lv:'a',lbl:'Phase 1 — Coordination plan d\'actions',t:'Coordination du plan d\'actions HRS4R',d:'Janv. 2020 → Fév. 2022',b:'Coordination de +30 acteurs (DRH, DSIN, Dir. Comm., SCD, Hygiène & Sécurité, labos, formation…). Suivi des échéances, comptes rendus, reporting VP RH.'},
+      {s:'2021-03-01',e:'2022-02-28',c:'#8b5e38',lv:'b',lbl:'Phase 2 — Élaboration nouveau plan',t:'Élaboration du nouveau plan HRS4R',d:'Mars 2021 → Fév. 2022',b:'En parallèle : rédaction du nouveau plan intégrant les priorités CE (science ouverte, jeunes chercheurs).'},
+      {s:'2022-05-01',e:'2023-08-31',c:'#c49a6c',lv:'c',lbl:'Phase 3 — Mise en œuvre nouveau plan',t:'Mise en œuvre du nouveau plan HRS4R',d:'Mai 2022 → Août 2023',b:'Coordination de la mise en œuvre du nouveau plan d\'actions post-renouvellement.'},
+     ],
+     ms:[
+      {d:'2022-02-15',vtop:10,vlbl:32,lbl:'Soumission CE',t:'⬥ Moment clé — Soumission CE',dt:'Février 2022',b:'Dépôt du dossier complet de renouvellement sur la plateforme CE.'},
+      {d:'2022-04-15',vtop:55,vlbl:77,lbl:'Audit site CE',t:'⬥ Moment clé — Audit sur site CE',dt:'Avril 2022',b:'Venue des experts CE. Organisation logistique complète. Label renouvelé.'},
+     ]},
+    {main:'Indicateurs de la recherche',sub:'Pilotage & QlikView — Service Pilotage & Contrôle de Gestion',
+     bars:[
+      {s:'2020-01-01',e:'2021-09-30',c:'#2e5c20',lv:'a',lbl:'Phase 1 — Récolte données 2017-2020',t:'Récolte des données de recherche 2017–2020',d:'Janv. 2020 → Mi-2021',b:'Collecte auprès des laboratoires, COMUE UBFC et services centraux. Participation aux 5 Collegiums en soutien administratif.'},
+      {s:'2021-01-01',e:'2022-03-31',c:'#5a8a3a',lv:'b',lbl:'Phase 2 — Fiches qualif. + QlikView',t:'Fiches de qualification & transposition QlikView',d:'2021 → Mars 2022',b:'Conception des fiches de qualification méthodologiques. Pilotage de la transposition QlikView avec la collègue DSIN.'},
+      {s:'2022-01-01',e:'2023-08-31',c:'#90c06a',lv:'c',lbl:'Phase 3 — Suivi annuel indicateurs',t:'Suivi annuel des indicateurs de recherche',d:'2022 → Août 2023',b:'Mise à jour et suivi annuel des indicateurs par Collegium dans le tableau de bord QlikView.'},
+     ],
+     ms:[
+      {d:'2022-03-15',vtop:55,vlbl:77,lbl:'Diffusion fiches',t:'⬥ Moment clé — Diffusion fiches Collegiums',dt:'Mars 2022',b:'Diffusion des fiches synthèse par discipline (2017-2020) dans les 5 Collegiums.'},
+     ]},
+  ]},
+  {group:'Projets ponctuels',rows:[
+    {main:'HCERES',sub:'Évaluation établissement & auditions formations',
+     bars:[
+      /* Barre a (top=10) et barre b (top=50) — bien séparées, pas de chevauchement */
+      {s:'2022-01-01',e:'2022-08-31',c:'#5c1f3a',lv:'a',lbl:'HCERES Établissement — référentiel & visite experts',t:'HCERES Établissement',d:'Janv. → Août 2022',b:'Soutien sur le référentiel d\'évaluation. Organisation logistique de la venue du comité d\'experts HCERES.'},
+      {s:'2022-06-01',e:'2022-10-31',c:'#8a4060',lv:'b',lbl:'HCERES Formations — auditions oct. 2022',t:'HCERES Formations — Auditions',d:'Juin → Oct. 2022',b:'Soutien à la VP Formation pour la programmation des auditions formations (20 octobre 2022).'},
+     ],ms:[]},
+    {main:'VSS / Égalité professionnelle',sub:'AAP MESRI — Tableaux de bord & subventions',
+     bars:[
+      {s:'2022-01-01',e:'2022-07-31',c:'#1a3d6b',lv:'a',lbl:'AAP VSS 2022 — TdB + montage dossier MESRI',t:'AAP VSS 2022 — Montage & TdB',d:'Janv. → Juil. 2022',b:'Conception des tableaux de bord et soutien au montage du dossier MESRI. Subvention obtenue au montant maximum : 138 110 €.'},
+      {s:'2023-01-01',e:'2023-07-31',c:'#3a6ba0',lv:'b',lbl:'AAP VSS 2023 — renouvellement dossier',t:'AAP VSS 2023 — Renouvellement',d:'Janv. → Juil. 2023',b:'Mise à jour des tableaux de bord VSS et renouvellement du dossier.'},
+     ],
+     /* Moment clé subvention : vtop=10 (niveau a), vlbl=32 — clairement au-dessus */
+     ms:[
+      {d:'2022-06-16',vtop:10,vlbl:32,lbl:'138 110 € obtenus',t:'⬥ Moment clé — Subvention obtenue',dt:'Juin 2022',b:'Montant maximum alloué par l\'État pour le soutien VSS et égalité professionnelle.'},
+     ]},
+    {main:'Veille CPJ',sub:'Chaires de Professeur Junior — Étude prospective',
+     /* Barre 2022 démarrant à 2022-02-01 pour laisser visible le label "2022" en début d'année */
+     bars:[
+      {s:'2022-02-01',e:'2022-12-31',c:'#3a5c7a',lv:'a',lbl:'Veille CPJ 2022 — étude prospective disciplines',t:'Étude prospective CPJ 2022',d:'2022',b:'Analyse des demandes ministérielles : disciplines, sujets, interdisciplinarité.'},
+      {s:'2023-01-15',e:'2023-08-31',c:'#6a90b0',lv:'b',lbl:'Veille CPJ 2023 — reconduction',t:'Veille CPJ 2023',d:'2023',b:'Reconduction de la veille et analyse prospective CPJ.'},
+     ],ms:[]},
+  ]},
+  {group:'Soutien transversal continu',rows:[
+    {main:'Soutien DGS',sub:'Dialogues de gestion & revues de services — 4 thèmes stratégiques',
+     bars:[
+      {s:'2022-02-01',e:'2022-12-31',c:'#1a5c4a',lv:'a',lbl:'Soutien DGS 2022 — dialogues gestion + revues services',t:'Soutien DGS 2022',d:'2022',b:'Soutien au DGS pour dialogues de gestion et revues de services. 4 thèmes : Appui recherche, Vie étudiante, Formation, Modernisation administrative.'},
+      {s:'2023-01-15',e:'2023-08-31',c:'#3a8a6a',lv:'b',lbl:'Soutien DGS 2023 — reconduction',t:'Soutien DGS 2023',d:'2023',b:'Reconduction du soutien DGS : dialogues de gestion et revues de services.'},
+     ],ms:[]},
+    {main:'Infocom / RIPEC',sub:'Pilotage stratégique & RH enseignants-chercheurs',
+     bars:[
+      {s:'2023-01-15',e:'2023-08-31',c:'#3a1f5c',lv:'a',lbl:'GT Infocom + RIPEC — pilotage stratégique',t:'GT Infocom & RIPEC',d:'2023',b:'Soutien au GT Infocom avec VP Collegium et CFVU. Soutien RIPEC (régime indemnitaire enseignants-chercheurs).'},
+     ],ms:[]},
+  ]},
+];
 
-  // Header months
-  html += '<div class="gantt-header"><div class="gantt-label-head">Projet</div><div class="gantt-months" style="display:grid;grid-template-columns:repeat(' + months.length + ',1fr)">';
-  months.forEach(m => {
-    const mo = m.toLocaleDateString('fr-FR', { month: 'short' });
-    const yr = m.getFullYear();
-    if (m.getMonth() === 0) {
-      html += '<div class="gantt-month" style="font-weight:600;color:var(--brown-dark)">' + yr + '</div>';
-    } else if (m.getMonth() % 3 === 0) {
-      html += '<div class="gantt-month">' + mo + '</div>';
+function buildGantt(){
+  const root=document.getElementById('groot');
+  let h='';
+
+  /* En-tête */
+  h+='<div class="gh"><div class="ghl">Projet / Mission</div><div class="ghr">';
+  QS.forEach(q=>{
+    const l=p(q.d).toFixed(2);
+    if(q.q===1){
+      h+=`<div class="gl yr" style="left:${l}%;top:0;bottom:-8px"></div>`;
+      h+=`<div style="position:absolute;left:${l}%;top:0;font-size:18px;font-weight:800;color:#3b2a1a;padding-left:6px">${q.y}</div>`;
     } else {
-      html += '<div class="gantt-month" style="color:transparent">·</div>';
+      h+=`<div class="gl qt" style="left:${l}%;top:0;bottom:-8px"></div>`;
+      h+=`<div style="position:absolute;left:${l}%;top:26px;font-size:13px;color:#6b5540;padding-left:4px">T${q.q}</div>`;
     }
   });
-  html += '</div></div>';
+  h+='</div></div>';
 
-  PROJECTS.forEach(group => {
-    html += '<div class="gantt-group-title"><div class="gantt-group-label">' + group.group + '</div><div></div></div>';
-
-    group.rows.forEach(row => {
-      html += '<div class="gantt-row">';
-      html += '<div class="gantt-task-label"><strong>' + row.label + '</strong>' + row.sublabel + '</div>';
-      html += '<div class="gantt-track" style="position:relative">';
-
-      // Grid lines
-      months.forEach((m, i) => {
-        const p = (i / months.length * 100).toFixed(2);
-        html += '<div class="gantt-grid-line" style="left:' + p + '%"></div>';
+  DATA.forEach(group=>{
+    h+=`<div class="gsep"><div class="gst">${group.group}</div><div class="gsl"></div></div>`;
+    group.rows.forEach((row,ri)=>{
+      const ev=ri%2===0?'':'even';
+      h+=`<div class="grow ${ev}"><div class="glb"><div class="glm">${row.main}</div><div class="gls">${row.sub}</div></div><div class="gtr">`;
+      /* Grille */
+      QS.forEach(q=>{
+        const l=p(q.d).toFixed(2);
+        h+=`<div class="gl ${q.q===1?'yr':'qt'}" style="left:${l}%"></div>`;
       });
-
-      // Bars
-      row.bars.forEach(bar => {
-        const left = pct(bar.s).toFixed(2);
-        const w = width(bar.s, bar.e).toFixed(2);
-        const opacity = bar.opacity || 1;
-        const top = bar.ponctuel ? '9px' : (bar.offset ? bar.offset + 'px' : '6px');
-        const height = bar.ponctuel ? '10px' : (bar.offset ? '10px' : '16px');
-        const radius = bar.ponctuel ? '2px' : '3px';
-        html += '<div class="gantt-bar" title="' + bar.label + '" style="left:' + left + '%;width:' + w + '%;background:' + bar.color + ';opacity:' + opacity + ';top:' + top + ';height:' + height + ';border-radius:' + radius + '">' + (parseFloat(w) > 8 ? bar.label.substring(0,25) : '') + '</div>';
+      /* Barres + étiquettes */
+      row.bars.forEach(bar=>{
+        const l=p(bar.s).toFixed(2), w=bw(bar.s,bar.e).toFixed(2);
+        h+=`<div class="bar ${bar.lv}" style="left:${l}%;width:${w}%;background:${bar.c}"
+          onmouseenter="showTT(event,'${bar.t}','${bar.d}','${bar.b.replace(/'/g,"\\'")}');"
+          onmouseleave="hideTT()"></div>`;
+        h+=`<div class="blbl ${bar.lv}" style="left:${l}%;max-width:${w}%">${bar.lbl}</div>`;
       });
-
-      html += '</div></div>';
+      /* Moments clés — rouge uniquement */
+      (row.ms||[]).forEach(ms=>{
+        const l=p(ms.d).toFixed(2);
+        h+=`<div class="ms" style="left:calc(${l}% - 9px);top:${ms.vtop}px;background:${RED}"
+          onmouseenter="showTT(event,'${ms.t}','${ms.dt}','${ms.b.replace(/'/g,"\\'")}');"
+          onmouseleave="hideTT()"></div>`;
+        h+=`<div class="msl" style="left:${l}%;top:${ms.vlbl}px">${ms.lbl}</div>`;
+      });
+      h+='</div></div>';
     });
   });
 
-  container.innerHTML = html;
-}
-
-function showTab(id, btn) {
-  document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  btn.classList.add('active');
+  root.innerHTML=h;
 }
 
 buildGantt();
